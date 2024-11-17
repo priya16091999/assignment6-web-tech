@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- create a text box , get value from the same. do the validation for name & show result in paragraph ( below
+textbox)
+-->
+<h2>Enter your Name</h2>
+
+    <!-- Input Text Box for Name -->
+    <input type="text" id="name" placeholder="Enter your name">
+    <button onclick="validateName()">Validate</button>
+
+    <!-- Paragraph to display validation result -->
+    <p id="result"></p>
+
+    <script>
+        function validateName() {
+            // Get the value from the input box
+            let name = document.getElementById("name").value;
+
+            // Define the validation pattern for a name (only alphabetic characters, spaces allowed, at least 2 characters)
+            let namePattern = /^[a-zA-Z\s]{2,}$/;
+
+            // Get the result paragraph element
+            let result = document.getElementById("result");
+
+            // Validate the name
+            if (namePattern.test(name)) {
+                result.innerHTML = "Valid name.";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "Invalid name. Please enter at least 2 alphabetic characters.";
+                result.style.color = "red";
+            }
+        }
+        
+    </script>
+</body>
+</html>

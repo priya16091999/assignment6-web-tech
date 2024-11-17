@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h2>Enter your Mobile Number</h2>
+
+    <!-- Input Text Box for Mobile Number -->
+    <input type="text" id="mobileNumber" placeholder="Enter mobile number">
+    <button onclick="validateMobileNumber()">Validate</button>
+
+    <!-- Paragraph to display validation result -->
+    <p id="result"></p>
+    <script>
+        function validateMobileNumber() {
+            // Get the value from the input box
+            let mobileNumber = document.getElementById("mobileNumber").value;
+
+            // Define the validation pattern (assuming 10-digit mobile numbers)
+            let mobilePattern = /^[0-9]{10}$/;
+
+            // Get the result paragraph element
+            let result = document.getElementById("result");
+
+            // Validate the mobile number
+            if (mobilePattern.test(mobileNumber)) {
+                result.innerHTML = "Valid mobile number.";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "Invalid mobile number. Please enter a 10-digit number.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>

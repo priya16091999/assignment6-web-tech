@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <!-- Textbox with onblur and onfocus events -->
+    <input type="text" id="myTextBox" onblur="calculate()" onfocus="calculate()" placeholder="Click here...">
+
+    <script>
+        // Creating an anonymous function assigned to 'calculate'
+        let calculate = function() {
+            console.log("Dummy text: The calculate function was called.");
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Enter your Email ID</h2>
+
+    <!-- Input Text Box for Email ID -->
+    <input type="text" id="emailId" placeholder="Enter your email">
+    <button onclick="validateEmail()">Validate</button>
+
+    <!-- Paragraph to display validation result -->
+    <p id="result"></p>
+
+    <script>
+        function validateEmail() {
+            // Get the value from the input box
+            let email = document.getElementById("emailId").value;
+
+            // Define the validation pattern for email
+            let emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+
+            // Get the result paragraph element
+            let result = document.getElementById("result");
+
+            // Validate the email
+            if (emailPattern.test(email)) {
+                result.innerHTML = "Valid email address.";
+                result.style.color = "green";
+            } else {
+                result.innerHTML = "Invalid email address. Please enter a valid email.";
+                result.style.color = "red";
+            }
+        }
+    </script>
+</body>
+</html>
